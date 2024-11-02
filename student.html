@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Diák Regisztráció</title>
+</head>
+<body>
+    <h1>Diák Regisztráció</h1>
+    <form method="POST">
+        <label for="name">Név:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <h2>Előadások kiválasztása:</h2>
+        {% for time_slot, options in lectures.items() %}
+            <fieldset>
+                <legend>Időslot {{ time_slot }}</legend>
+                {% for option in options %}
+                    <input type="radio" id="{{ option[0] }}" name="slot_{{ time_slot }}" value="{{ option[0] }}">
+                    <label for="{{ option[0] }}">{{ option[1] }}</label><br>
+                {% endfor %}
+            </fieldset>
+        {% endfor %}
+
+        <button type="submit">Regisztrálás</button>
+    </form>
+</body>
+</html>

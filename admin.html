@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin felület</title>
+</head>
+<body>
+    <h1>Admin felület</h1>
+    <h2>Regisztrált diákok:</h2>
+    <table border="1">
+        <tr>
+            <th>Név</th>
+            <th>Email</th>
+            <th>1. Idősáv</th>
+            <th>2. Idősáv</th>
+            <th>3. Idősáv</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.name }}</td>
+            <td>{{ student.email }}</td>
+            <td>{{ student.slot_1 }}</td>
+            <td>{{ student.slot_2 }}</td>
+            <td>{{ student.slot_3 }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
