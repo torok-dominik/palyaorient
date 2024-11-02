@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <h2>Students</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Registered Course</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.id }}</td>
+            <td>{{ student.first_name }}</td>
+            <td>{{ student.last_name }}</td>
+            <td>{{ student.email }}</td>
+            <td>{{ student.registered_course_id }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <h2>Courses</h2>
+    <table border="1">
+        <tr>
+            <th>Course Name</th>
+            <th>Max Capacity</th>
+            <th>Current Enrollment</th>
+        </tr>
+        {% for course in courses %}
+        <tr>
+            <td>{{ course.name }}</td>
+            <td>{{ course.max_capacity }}</td>
+            <td>{{ course.current_enrollment }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <a href="{{ url_for('logout') }}">Logout</a>
+    <button onclick="window.print()">Print</button>
+</body>
+</html>
