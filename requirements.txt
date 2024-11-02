@@ -8,4 +8,5 @@ blinker==1.8.2
 colorama==0.4.6
 MarkupSafe==3.0.2
 SQLAlchemy==1.4.36
-Flask-SQLAlchemy==2.5.1
+Flask-SQLAlchemy>=2.5.2
+
